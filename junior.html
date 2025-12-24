@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Join NCC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>For Students Who Want to Join NCC</h1>
+<p><em>Guidance for students interested in becoming NCC cadets</em></p>
+
+<h2>What is NCC?</h2>
+<p>
+    The National Cadet Corps (NCC) is a youth organization that helps students
+    develop discipline, leadership, confidence, and a sense of responsibility.
+</p>
+
+<h2>Why Many Students Miss NCC</h2>
+<p>
+    Many students are not aware that NCC exists in their college or do not know
+    whom to contact or how to apply. This page guides you step by step.
+</p>
+
+<h2>How to Join NCC</h2>
+<ol>
+    <li>Check if your college has an NCC unit</li>
+    <li>Watch for recruitment notices (usually at the beginning of the semester)</li>
+    <li>Contact the ANO or NCC office</li>
+    <li>Submit required documents</li>
+    <li>Attend the selection or enrollment parade</li>
+</ol>
+
+<h2>Documents Usually Required</h2>
+<ul>
+    <li>College ID card</li>
+    <li>Aadhaar card</li>
+    <li>Passport size photographs</li>
+    <li>Medical fitness certificate (if asked)</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<p><strong>Is NCC compulsory?</strong> No, NCC is completely voluntary.</p>
+<p><strong>Will NCC affect my academics?</strong> With proper time management, it will not.</p>
+<p><strong>Is NCC only for defence aspirants?</strong> No, it helps in overall personality development.</p>
+
+<!-- CONNECT WITH CADETS -->
+<h2>Connect with NCC Cadets</h2>
+<p>
+    If you are interested in joining NCC and want to clarify doubts,
+    you can reach out to current cadets for guidance and mentorship.
+</p>
+
+<ul>
+    <li>
+        <strong>Senior Cadet – Army Wing</strong><br>
+        <em>Can guide you on enrollment process and parade routine</em>
+    </li>
+    <li>
+        <strong>Senior Cadet – Air Wing</strong><br>
+        <em>Can help with understanding training and time management</em>
+    </li>
+</ul>
+
+<p>
+    <em>
+        Note: Contact is intended only for NCC-related guidance.
+        Communication should be done through official college or NCC channels.
+    </em>
+</p>
+
+<!-- 🔹 GEMINI CHATBOT SECTION -->
+<h2>Ask NCC Guide (AI Chatbot)</h2>
+<p>
+Have a question about NCC? Ask below to get quick guidance.
+</p>
+
+<div style="max-width:900px;margin:auto;">
+    <textarea id="userQuestion" rows="3" placeholder="Type your question here..." style="width:100%;padding:10px;"></textarea>
+    <br><br>
+    <button onclick="askGemini()">Ask</button>
+    <p id="botReply" style="margin-top:15px;"></p>
+</div>
+
+<p><em>This chatbot provides general guidance and is not an official NCC authority.</em></p>
+
+<br>
+<a href="index.html">Back to Home</a>
+
+<!-- 🔹 GEMINI SCRIPT -->
+ <script>
+function askGemini() {
+    const q = document.getElementById("userQuestion").value.toLowerCase();
+    const replyBox = document.getElementById("botReply");
+
+    if (!q.trim()) {
+        replyBox.innerText = "Please enter a question.";
+        return;
+    }
+
+    const faq = [
+        {
+            keywords: ["what is ncc", "about ncc"],
+            answer:
+                "NCC (National Cadet Corps) is a youth organization that develops discipline, leadership, confidence, and a sense of responsibility among students."
+        },
+        {
+            keywords: ["is ncc compulsory", "mandatory"],
+            answer:
+                "No. NCC is completely voluntary. Students choose to join based on interest."
+        },
+        {
+            keywords: ["documents", "required", "documents needed"],
+            answer:
+                "Commonly required documents include College ID card, Aadhaar card, passport-size photographs, and sometimes a medical fitness certificate."
+        },
+        {
+            keywords: ["academics", "studies", "affect studies"],
+            answer:
+                "With proper time management, NCC does not affect academics. Many cadets manage both successfully."
+        },
+        {
+            keywords: ["who can join", "eligibility"],
+            answer:
+                "Any eligible college student whose institution has an NCC unit can apply during recruitment."
+        },
+        {
+            keywords: ["benefits", "why join"],
+            answer:
+                "NCC helps build discipline, leadership skills, physical fitness, confidence, and offers opportunities like camps and certificates."
+        }
+    ];
+
+    let found = false;
+
+    for (let item of faq) {
+        for (let key of item.keywords) {
+            if (q.includes(key)) {
+                replyBox.innerText = item.answer;
+                found = true;
+                break;
+            }
+        }
+        if (found) break;
+    }
+
+    if (!found) {
+        replyBox.innerText =
+            "I can help with common NCC questions like eligibility, documents, benefits, and academics. Please try rephrasing.";
+    }
+}
+</script>
+
+
+</body>
+</html>

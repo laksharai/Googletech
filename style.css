@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f7f3f5;
+    color: #2e2e2e;
+}
+
+/* ---------- CENTER WRAPPER ---------- */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------- CARD (Landing + Login) ---------- */
+.card {
+    background-color: #ffffff;
+    padding: 50px 60px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.card h1 {
+    color: #7a3b4a;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 35px;
+}
+
+/* ---------- ACTION BUTTONS ---------- */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-buttons a {
+    background-color: #b76e79;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.action-buttons a:hover {
+    background-color: #7a3b4a;
+}
+
+/* ---------- INNER PAGES ---------- */
+body:not(.page-wrapper) {
+    padding: 40px 20px;
+}
+
+body > h1,
+body > h2,
+body > p,
+body > ul,
+body > ol,
+body > a,
+body > button {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Headings */
+h1 {
+    color: #7a3b4a;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #7a3b4a;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    border-left: 4px solid #b76e79;
+    padding-left: 10px;
+}
+
+/* Text */
+p {
+    font-size: 15.5px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+ul {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* ---------- BUTTONS ---------- */
+a,
+button {
+    background-color: #b76e79;
+    color: #ffffff;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14.5px;
+    display: inline-block;
+}
+
+a:hover,
+button:hover {
+    background-color: #7a3b4a;
+}
+
+/* Logout spacing */
+button {
+    margin-bottom: 15px;
+}
+
+/* ---------- FORMS ---------- */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    max-width: 360px;
+    padding: 10px;
+    font-size: 14.5px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #d8c2c8;
+}
+
+input:focus {
+    outline: none;
+    border-color: #b76e79;
+}
+
+/* Login button full width */
+.card button {
+    width: 100%;
+}
+
+/* Back link */
+.back-link {
+    background: none;
+    color: #b76e79;
+    padding: 0;
+    font-size: 14px;
+}
+
+/* Small text */
+em {
+    color: #666;
+}
+
+/* Divider */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 25px 0;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadet Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="card">
+
+        <h1>Cadet Login</h1>
+        <p class="subtitle">
+            Login required to access cadet-only resources
+        </p>
+
+        <form id="loginForm" onsubmit="login(); return false;" autocomplete="off">
+
+
+            <input type="email"
+                id="email"
+                name="user_email_fake"
+                placeholder="Email"
+                autocomplete="new-email"
+                spellcheck="false">
+            <br><br>
+
+            <input type="password"
+                id="password"
+                name="user_pass_fake"
+                placeholder="Password"
+                autocomplete="new-password">
+            <br><br>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p id="message"></p>
+
+        <br>
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+    </div>
+</div>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDma-K8bpUHkRfoYFgja--Dl8alDjDamd4",
+    authDomain: "ncc-companion-e06f9.firebaseapp.com",
+    projectId: "ncc-companion-e06f9",
+    appId: "1:32227003098:web:46a21a624f9e91ac4bb3e3"
+  };
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  window.addEventListener("pageshow", function (event) {
+      if (event.persisted) {
+          window.location.reload();
+      }
+  });
+
+  window.onload = function () {
+      const form = document.getElementById("loginForm");
+      if (form) {
+          form.reset();
+      }
+
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("message").innerText = "";
+  };
+
+  function login() {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(() => {
+        window.location.href = "cadet.html";
+      })
+      .catch((error) => {
+        document.getElementById("message").innerText = error.message;
+      });
+  }
+</script>
+
+</body>
+</html>

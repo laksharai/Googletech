@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NCC Cadet Support</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDma-K8bpUHkRfoYFgja--Dl8alDjDamd4",
+    authDomain: "ncc-companion-e06f9.firebaseapp.com",
+    projectId: "ncc-companion-e06f9",
+    appId: "1:32227003098:web:46a21a624f9e91ac4bb3e3"
+  };
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+
+  // Protect cadet page
+  firebase.auth().onAuthStateChanged((user) => {
+    if (!user) {
+      window.location.href = "login.html";
+    }
+  });
+
+  function logout() {
+    firebase.auth().signOut().then(() => {
+      window.location.href = "login.html";
+    });
+  }
+  
+</script>
+
+<!-- PAGE CONTENT -->
+
+<button onclick="logout()">Logout</button>
+<hr>
+
+<h1>For NCC Cadets</h1>
+<p><em>Cadet-only dashboard for NCC related information and resources</em></p>
+
+<h2>Parade Information</h2>
+<p>
+    Parade details such as timing, location, and required uniform
+    will be updated here to avoid confusion and last-minute stress.
+</p>
+
+<h2>Uniform Guide</h2>
+<ul>
+    <li><strong>No.8</strong> Regular parade uniform</li>
+    <li><strong>No.10:</strong> Ceremonial uniform</li>
+    <li><strong>PT Kit:</strong> Physical training days</li>
+</ul>
+
+<h2>Basic NCC Information</h2>
+<ul>
+    <li>NCC Motto: Unity and Discipline</li>
+    <li>NCC Day: Fourth Sunday of November</li>
+    <li>NCC Flag Colours: Red, Blue, Light Blue</li>
+</ul>
+
+<h2>Cadet Reminder</h2>
+<p>
+    Be punctual, wear the correct uniform, and maintain discipline
+    at all times during NCC activities.
+</p>
+
+<h2>NCC Reference Notes</h2>
+<p>
+    These reference materials are shared by the NCC unit for cadets’
+    academic and training purposes.
+</p>
+
+<ul>
+    <!-- Replace filenames with your actual PDFs -->
+    <li><a href="ncc-notes/drill-notes.pdf" target="_blank">Drill Notes</a></li>
+    <li><a href="ncc-notes/gk-notes.pdf" target="_blank">NCC GK Notes</a></li>
+    <li><a href="ncc-notes/certificate-guide.pdf" target="_blank">Certificate & Exam Guide</a></li>
+</ul>
+
+<p><em>Access to these documents is restricted to authenticated NCC cadets.</em></p>
+
+<br>
+<a href="index.html">Back to Home</a>
+
+</body>
+</html>
